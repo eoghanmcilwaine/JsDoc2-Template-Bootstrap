@@ -74,6 +74,11 @@
 					
 				!}
 				<img src="{+ classIcon +}" alt="{+classType+}" class="jsdoc-large-icon" />{+data.alias+}
+				{!
+					if (data.comment.getTag('abstract').length) {
+						output += '<span class="label label-jsdoc label-jsdoc-abstract">Abstract</span>';
+					}
+				!}
 				<if test="data.isInterface"><span class="label label-jsdoc label-jsdoc-interface">Interface</span></if>
 				<if test="data.hasMethod('getInstance')"><span class="label label-jsdoc label-jsdoc-singleton">Singleton</span></if>
 				<if test="data.deprecated"><span class="label label-jsdoc label-jsdoc-deprecated">Deprecated</span></if>
