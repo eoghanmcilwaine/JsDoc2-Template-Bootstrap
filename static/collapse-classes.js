@@ -28,6 +28,20 @@ $(function() {
 		return children;
 	}
 
+	function getParent(li) {
+		var level = $(li).data('level'),
+			index = $('li.class').index(li),
+			parent,
+			cnd,
+			siblings = $('li.class'),
+			sl = $(siblings).length;
+		
+		for (var i = index; i >= 0; i--) {
+			cnd = $(siblings[i]);
+			if ($(cnd).data('level') == level - 1) return cnd;
+		}
+	}
+
 	$('li.class').on('collapse', function() {
 		var children = getChildren(this);
 		for (var i in children) {
@@ -37,8 +51,9 @@ $(function() {
 		$(this).hide();
 	});
 
-	$('li.class').on('expand', function() {		
+	$('li.class').on('expand', function() {
 		var children = getChildren(this),
+			parent = getParent(this),
 			child;
 
 		for (var i in children) {
@@ -47,10 +62,11 @@ $(function() {
 		}
 		$(this).removeClass('collapsed');
 		$(this).show();
+		if (parent) $(parent).trigger('expand');
 	});
 
 	$('li.class').on('click', function(ev) {
-		ev.preventDefault();
+		// ev.preventDefault();
 		if ($(this).hasClass('collapsed')) {
 			$(this).trigger('expand');
 		}
@@ -68,5 +84,10 @@ $(function() {
 	$('li.class').trigger('collapse');
 	$('li.class[data-level=0]').show();
 
+	$('li.class').each(function() {
+		if (location.href.indexOf($(this).data('alias')) !== -1) {
+			$(this).trigger('expand');
+		}
+	});
 
 });

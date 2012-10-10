@@ -22,14 +22,20 @@
 					indent = item.alias.split('.').length - 1;
 					if (item.comment.getTag('module').length) {
 						module = true;
+						icon = '<i class="icon-book"></i>';
 					}
+
+					if (item.name === 'Views') {
+						icon = '<i class="icon-eye-open"></i>';
+					}
+					var opacity = (item.comment.getTag('abstract').length) ? '0.7': '1';
 				}
 			
-			output += '<li class="class" data-level="' + indent + '" >';
+			output += '<li class="class" data-level="' + indent + '" data-alias="' + item.alias + '" >';
 
 				if (item.alias !== "_global_") {
 					
-					var content = '<span class="indent" style="padding-left:' + (indent * 14) + 'px;" >' + icon + name +'</span>';
+					var content = '<span class="indent" style="padding-left:' + (indent * 14) + 'px;opacity:' + opacity + ';" >' + icon + name +'</span>';
 
 					if (module) {
 						content += ' <span class="pull-right label label-info">Module</span> ';
