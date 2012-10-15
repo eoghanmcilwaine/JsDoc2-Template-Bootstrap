@@ -2,8 +2,7 @@ h1. JsDoc2 Template with Bootstrap, customised for modules.
 
 h2. Abstract
 
-This template allows for less cluttered visualisation of a project containing many classes which are ordered by module. The class list is collapsed
-based on the module / class hierarchy.
+This template allows for less cluttered visualisation of a project containing many classes which are ordered by module. The class list is collapsed based on the module / class hierarchy.
 
 h2. Based on
 
