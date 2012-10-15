@@ -1,12 +1,15 @@
-h1. JsDoc2 Template with Bootstrap
+h1. JsDoc2 Template with Bootstrap, customised for modules.
 
 h2. Abstract
 
-This template make beautiful and functional documents.
+This template allows for less cluttered visualisation of a project containing many classes which are ordered by module. The class list is collapsed
+based on the module / class hierarchy.
 
-h2. Overview
+h2. Based on
 
-See "JsDoc2 Template with Bootstrap":http://orgachem.github.com/JsDoc2-Template-Bootstrap/ .
+Fork of "JsDoc2 Template with Bootstrap":https://github.com/OrgaChem/JsDoc2-Template-Bootstrap .
+
+See "Documentation page":http://orgachem.github.com/JsDoc2-Template-Bootstrap/ for more info.
 
 h2. Install
 
@@ -14,4 +17,4 @@ bq. To produce output files you must use a template to format the generated docu
 
 bc. java -jar jsrun.jar app/run.js myscripts/ -t=templates/jsdoc
 
-Show the official "documents":http://code.google.com/p/jsdoc-toolkit/wiki/CommandlineOptions#Using_a_Template , if you want more informations.
+Show the official "documents":http://code.google.com/p/jsdoc-toolkit/wiki/CommandlineOptions#Using_a_Template , if you want more information.
