@@ -127,7 +127,11 @@
 					<if test="data.isNamespace">
 						<li class="jsdoc-hierarchy-caption">Hierarchy</li>
 							<for each="namespaceSymbol" in="getParentNamespaces(data)">
-								<li>{+ new Link().toSymbol(namespaceSymbol.alias) +}<span class="divider">«</span></li>
+								<if test="namespaceSymbol">
+									<li>{+ new Link().toSymbol(namespaceSymbol.alias) +}<span class="divider">«</span></li>
+								<else>
+									<li><small>undocumented</small></li>
+								</if>
 							</for>
 						<li class="active">{+ data.name +}</li>
 					<else />
